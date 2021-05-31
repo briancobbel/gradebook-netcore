@@ -3,11 +3,19 @@ using System.Collections.Generic;
 
 namespace GradeBook 
 {
-    public class Book 
+
+    public delegate void GradeAddedDelegate(object sender, EventArgs args);
+
+    public class NamedObject
     {
+        public string  Name
+        {
+            get; set;
+        }
 
-        public delegate void GradeAddedDelegate(object sender, EventArgs args);
-
+    }
+    public class Book : NamedObject
+    {
         public Book(string name)
         {
             grades = new List<double>();
